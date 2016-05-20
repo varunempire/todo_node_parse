@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html ng-app="todo">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="todoController">
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>TODO<span class="label label-info"></span></h1>
+        </div>
+
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form ng-Submit="createTodo()">
+                    <div class="form-group">
+                        <input id="textbox" type="text" class="form-control input-lg text-center" placeholder="enter your todo here" ng-model="formData.text">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" type="submit" >Add</button>
+                </form>
+            </div>
+        </div>
+        <div id="todo-list" class="row" data-ng-init='loadTodo()'>
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <div class="checkbox" ng-repeat="todo in todolist">
+                    <label>
+                        <input type="checkbox" ng-model="todo.isDone" ng-click="updateTodo(todo.objectId,todo.isDone)"> {{ todo.todoContent}}
+                    </label>
+                   
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
