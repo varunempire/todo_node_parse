@@ -53,5 +53,20 @@ app.controller('todoController',function($scope, $http) {
                 console.log('Error: ' + data);
             });
     };
+    $scope.deleteTodo = function(id){
+        var data = {"id" : id};
+        console.log(data);
+         $http({
+            url: '/api/todosDelete',
+            method: "POST",
+            params: data
+            })
+            .success(function(data) {
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
    
 });

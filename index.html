@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo</title>
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
     <script src="jquery.min.js"></script>
     <script src="angular.min.js"></script>
     <script src="controller.js"></script>
+    <style type="text/css">
+        .fa.fa-trash{
+            color : white;
+        }
+    </style>
 </head>
 <body ng-controller="todoController">
     <div class="container">
@@ -34,8 +40,11 @@
                     <label>
                         <input type="checkbox" ng-model="todo.isDone" ng-click="updateTodo(todo.objectId,todo.isDone)"> {{ todo.todoContent}}
                     </label>
-                   
+                    <button type="button" class="btn-xs btn-danger" style="float:right;" ng-click="deleteTodo(todo.objectId)"><i class="fa fa-trash"></i> Delete</button>  
+                     <hr>
                 </div>
+                
+               
 
             </div>
         </div>

@@ -85,7 +85,23 @@ app.post('/api/todosUpdate', jsonParser, function(request, response) {
     });    
 });
 
-
+app.post('/api/todosDelete', jsonParser, function(request, response) {
+    console.log(request.query);
+    console.log('post call');
+    var Todo = Parse.Object.extend("Todo");
+    var todoContent = new Todo();
+    todoContent.destory({
+      objectId: request.query.id
+    }, {
+      success: function(results) {
+        
+        response.send(results);
+      },
+      error: function(results, error) {
+        console.log(error);
+      }
+    });    
+});
 
 app.listen(8080);
 console.log("App listening on port 8080");
