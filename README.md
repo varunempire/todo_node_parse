@@ -1,1 +1,1 @@
-#TODO Application using Nodejs and parse
+#TODO Application using Nodejs, AngularJs and Parse
