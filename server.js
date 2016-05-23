@@ -82,7 +82,7 @@ app.post('/api/todosUpdate', jsonParser, function(request, response) {
       error: function(results, error) {
         console.log(error);
       }
-    });    
+    }); 
 });
 
 app.post('/api/todosDelete', jsonParser, function(request, response) {

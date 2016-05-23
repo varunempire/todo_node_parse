@@ -10,6 +10,7 @@
     <script src="jquery.min.js"></script>
     <script src="angular.min.js"></script>
     <script src="controller.js"></script>
+    <link href="style.css" rel="stylesheet">
     <style type="text/css">
         .fa.fa-trash{
             color : white;
@@ -33,23 +34,44 @@
                 </form>
             </div>
         </div>
-        <div id="todo-list" class="row" data-ng-init='loadTodo()'>
-            <div class="col-sm-4 col-sm-offset-4">
+        <!--<div id="todo-list" class="row" data-ng-init='loadTodo()'>-->
+        <!--    <div class="col-sm-4 col-sm-offset-4">-->
 
-                <div class="checkbox" ng-repeat="todo in todolist">
-                    <label>
-                        <input type="checkbox" ng-model="todo.isDone" ng-click="updateTodo(todo.objectId,todo.isDone)"> {{ todo.todoContent}}
-                    </label>
+        <!--        <div class="checkbox" ng-repeat="todo in todolist">-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" ng-model="todo.isDone" ng-click="updateTodo(todo.objectId,todo.isDone)"> {{ todo.todoContent}}-->
+        <!--            </label>-->
                     <!--<button type="button" class="btn-xs btn-danger" style="float:right;" ng-click="deleteTodo(todo.objectId)"><i class="fa fa-trash"></i> Delete</button>  -->
-                     <hr>
-                </div>
+        <!--             <hr>-->
+        <!--        </div>-->
                 
                
 
-            </div>
-        </div>
+        <!--    </div>-->
+        <!--</div>-->
 
-    </div>
+  
+    
+    
+    
+    
+    
+    <div id="wrapper todo-list" class="row" data-ng-init='loadTodo()'>
+	<div id="columns" class="col-sm-8 col-sm-offset-2">
+		<div class="pin checkbox" ng-repeat="todo in todolist">
+			
+			<div>
+				 <label>
+                        <input type="checkbox" ng-model="todo.isDone" ng-click="updateTodo(todo.objectId,todo.isDone)"> {{ todo.todoContent}}
+                </label>
+			</div>
+		</div>
+	</div>
+</div>
+    
+</div>
+    
+    
 
 </body>
 </html>
